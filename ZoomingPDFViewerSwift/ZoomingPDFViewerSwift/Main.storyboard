@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="ZoomingPDFViewerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11" y="238"/>
+        </scene>
+        <!--Data View Controller-->
+        <scene sceneID="wiV-AX-Eba">
+            <objects>
+                <viewController storyboardIdentifier="DataViewController" id="b9I-2I-vIj" customClass="DataViewController" customModule="ZoomingPDFViewerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="01F-9L-9f2"/>
+                        <viewControllerLayoutGuide type="bottom" id="RG2-uJ-fu0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F1e-lA-ash">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-LT-l70" customClass="PDFScrollView" customModule="ZoomingPDFViewerSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RG2-uJ-fu0" firstAttribute="top" secondItem="D0E-LT-l70" secondAttribute="bottom" id="Tw9-ep-L9K"/>
+                            <constraint firstItem="D0E-LT-l70" firstAttribute="top" secondItem="F1e-lA-ash" secondAttribute="top" id="qeC-kX-1XZ"/>
+                            <constraint firstItem="D0E-LT-l70" firstAttribute="leading" secondItem="F1e-lA-ash" secondAttribute="leading" id="v6r-hu-9xr"/>
+                            <constraint firstAttribute="trailing" secondItem="D0E-LT-l70" secondAttribute="trailing" id="yFJ-Na-mN8"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="scrollView" destination="D0E-LT-l70" id="oUi-Qo-gSG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jX-ew-f80" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="238"/>
+        </scene>
+    </scenes>
+</document>
