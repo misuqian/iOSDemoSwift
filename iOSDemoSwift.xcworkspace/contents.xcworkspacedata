@@ -4,4 +4,7 @@
    <FileRef
       location = "group:ZoomingPDFViewerSwift/ZoomingPDFViewerSwift.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ABUIGroupsSwift/ABUIGroupsSwift.xcodeproj">
+   </FileRef>
 </Workspace>

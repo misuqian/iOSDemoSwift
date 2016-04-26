@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jOr-4Q-fLY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--AddressBook Groups-->
+        <scene sceneID="3Ha-AC-0K3">
+            <objects>
+                <tableViewController id="YAD-11-Nej" customClass="GroupViewController" customModule="ABUIGroupsSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ix4-oL-Xw2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="YAD-11-Nej" id="J8n-eN-Rut"/>
+                            <outlet property="delegate" destination="YAD-11-Nej" id="KFB-wH-KOF"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="AddressBook Groups" id="R3F-93-ubr">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="Mys-WN-Dwu">
+                            <connections>
+                                <segue destination="wL0-Wr-2u7" kind="modal" identifier="addGroup" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="1LV-JI-U97"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="addButton" destination="Mys-WN-Dwu" id="ppy-Dw-4NY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7l-FR-0Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TiG-Yl-bIx">
+            <objects>
+                <navigationController id="jOr-4Q-fLY" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aHe-5A-fQq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YAD-11-Nej" kind="relationship" relationship="rootViewController" id="PiQ-uv-kzv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYl-j4-54u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="333"/>
+        </scene>
+        <!--Add Group View Controller-->
+        <scene sceneID="jlz-BP-gX4">
+            <objects>
+                <viewController id="wL0-Wr-2u7" customClass="AddGroupViewController" customModule="ABUIGroupsSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FdM-bN-gIe"/>
+                        <viewControllerLayoutGuide type="bottom" id="s7n-iU-TJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oYT-81-QtU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4U-Pz-XJn">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Tvi-lK-RuT"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Add Group" id="TB0-gz-D9Q">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="I8L-Bh-pLv">
+                                            <connections>
+                                                <action selector="cancel:" destination="wL0-Wr-2u7" id="P8U-pk-U7c"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="AO3-6u-JOs">
+                                            <connections>
+                                                <action selector="done:" destination="wL0-Wr-2u7" id="ya1-Q7-42P"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-pn-MDB">
+                                <rect key="frame" x="108" y="76" width="192" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq9-ij-p21">
+                                <rect key="frame" x="0.0" y="74" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7Kj-Ek-18x"/>
+                                    <constraint firstAttribute="height" constant="34" id="J2J-q4-5bC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SDn-pn-MDB" firstAttribute="leading" secondItem="Iq9-ij-p21" secondAttribute="trailing" constant="8" id="0MC-0v-CP7"/>
+                            <constraint firstAttribute="trailing" secondItem="x4U-Pz-XJn" secondAttribute="trailing" id="7ws-WN-bBC"/>
+                            <constraint firstItem="SDn-pn-MDB" firstAttribute="top" secondItem="x4U-Pz-XJn" secondAttribute="bottom" constant="12" id="BT6-Fw-ueM"/>
+                            <constraint firstItem="SDn-pn-MDB" firstAttribute="leading" secondItem="Iq9-ij-p21" secondAttribute="trailing" constant="8" id="XXP-JM-mUZ"/>
+                            <constraint firstItem="Iq9-ij-p21" firstAttribute="top" secondItem="x4U-Pz-XJn" secondAttribute="bottom" constant="10" id="XXU-6V-gFd"/>
+                            <constraint firstAttribute="trailing" secondItem="SDn-pn-MDB" secondAttribute="trailing" constant="20" id="ft9-eN-Jyz"/>
+                            <constraint firstItem="x4U-Pz-XJn" firstAttribute="top" secondItem="FdM-bN-gIe" secondAttribute="bottom" id="jPF-lX-iLa"/>
+                            <constraint firstItem="Iq9-ij-p21" firstAttribute="leading" secondItem="oYT-81-QtU" secondAttribute="leading" id="vA6-R8-ago"/>
+                            <constraint firstItem="x4U-Pz-XJn" firstAttribute="leading" secondItem="oYT-81-QtU" secondAttribute="leading" id="wZl-hT-2OK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0MC-0v-CP7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="doneButton" destination="AO3-6u-JOs" id="Pw3-Cs-hjB"/>
+                        <outlet property="textField" destination="SDn-pn-MDB" id="7Zf-Aq-G4d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQa-iw-d1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="333"/>
+        </scene>
+    </scenes>
+</document>
