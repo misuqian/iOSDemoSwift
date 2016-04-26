@@ -8,7 +8,11 @@ Multi-paged PDF viewing with UIPageViewController demonstrates two-page spline v
 ###ABUIGroupsSwift
 AddressBook.framework应用.通讯录分组操作<br>
 ABUIGroups shows how to check and request access to a user’s address book database. It also demonstrates how to retrieve, add, and remove group records using AddressBook APIs. It displays groups organized by their source in the address book.
+###QuickContactsSwift
+AddressBookUI.framework应用.快速查看通讯录，联系人详细信息，创建联系人，修改联系人信息<br>
+QuickContacts demonstrates how to use the Address Book UI controllers and various properties such as displayedProperties, allowsAddingToAddressBook, and displayPerson. It shows how to browse a list of Address Book contacts, display and edit a contact record, create a new contact record, and update a partial contact record.
 
+<br>
 ## License
 The MIT License (MIT)
 

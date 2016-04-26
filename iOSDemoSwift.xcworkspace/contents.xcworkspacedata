@@ -7,4 +7,7 @@
    <FileRef
       location = "group:ABUIGroupsSwift/ABUIGroupsSwift.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:QuickContactsSwift/QuickContactsSwift.xcodeproj">
+   </FileRef>
 </Workspace>
