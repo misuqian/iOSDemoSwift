@@ -204,7 +204,6 @@ class GroupViewController: UITableViewController,GroupsDelegate{
      */
     func addNewGroups(name : String){
         var sourceFound = false
-        //首先判断是否Group名字重复
         let newGroup = ABGroupCreate().takeUnretainedValue() as ABRecordRef
         ABRecordSetValue(newGroup, kABGroupNameProperty, name, nil)
         
