@@ -1,5 +1,6 @@
 # iOSDemoSwift
-Rewrite Apple Samples in Swift.代码结构更清晰，中文详细注释
+Rewrite Apple iOS Samples in Swift.
+<br>代码结构更清晰，中文详细注释
 <br>长期更新.iPad和iPhone均支持
 
 ###ZoomingPDFViewerSwift
@@ -11,6 +12,9 @@ ABUIGroups shows how to check and request access to a user’s address book data
 ###QuickContactsSwift
 AddressBookUI.framework应用.快速查看通讯录，联系人详细信息，创建联系人，修改联系人信息<br>
 QuickContacts demonstrates how to use the Address Book UI controllers and various properties such as displayedProperties, allowsAddingToAddressBook, and displayPerson. It shows how to browse a list of Address Book contacts, display and edit a contact record, create a new contact record, and update a partial contact record.
+###AccelerometerGraphSwift
+CoreGraphics.frameworks和CoreMotion.frameworks应用。检测加速计并绘制图像。由于原版使用UIAccelerometer已弃用，故改用CoreMotion
+AccelerometerGraph sample application graphs the motion of the device. It demonstrates how to use the UIAccelerometer class and how to use Quartz2D and Core Animation to provide a high performance graph view. It also demonstrates a low-pass filter that you can use to isolate the effects of gravity, and a high-pass filter that you can use to remove the effects of gravity.
 
 <br>
 ## License

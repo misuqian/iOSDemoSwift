@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="AccelerometerGraphSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowpass Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="5H2-dU-1Jd">
+                                <rect key="frame" x="20" y="177" width="158" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="719-aZ-jvN"/>
+                                    <constraint firstAttribute="width" constant="158" id="Sjs-JH-nAT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REP-Rz-IEE" customClass="GraphView" customModule="AccelerometerGraphSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="206" width="320" height="112"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="k0E-jN-IX9"/>
+                                </constraints>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="320" y="57" width="0.0" height="128"/>
+                                </variation>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M9c-XI-40L">
+                                <rect key="frame" x="20" y="334" width="280" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="dx8-qN-JkI"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Low Pass"/>
+                                    <segment title="High Pass"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dx8-qN-JkI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dx8-qN-JkI"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="filterSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="lMH-MJ-9e4"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accelerometer Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhW-FR-sH5">
+                                <rect key="frame" x="20" y="28" width="158" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="L2w-zc-3N7"/>
+                                    <constraint firstAttribute="width" constant="158" id="r7n-Zl-sll"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWa-3x-bSU" customClass="GraphView" customModule="AccelerometerGraphSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="57" width="320" height="112"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="sdn-kc-5S8"/>
+                                </constraints>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="57" width="0.0" height="128"/>
+                                </variation>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cC5-g9-IcQ">
+                                <rect key="frame" x="20" y="378" width="280" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="sj6-Ab-9by"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Adaptive"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sj6-Ab-9by"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sj6-Ab-9by"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="adaptiveSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="zCg-WZ-NwY"/>
+                                </connections>
+                            </segmentedControl>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-PJ-CFn">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UwW-4k-hdh"/>
+                                    <barButtonItem title="Pause" id="Fal-fS-d7M">
+                                        <connections>
+                                            <action selector="pauseOrResume:" destination="BYZ-38-t0r" id="n7v-6b-OJA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Uw-Zf-xVh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="REP-Rz-IEE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Lu-4W-A44"/>
+                            <constraint firstItem="BWa-3x-bSU" firstAttribute="top" secondItem="XhW-FR-sH5" secondAttribute="bottom" constant="8" id="3xH-OI-tww"/>
+                            <constraint firstAttribute="trailing" secondItem="KFb-PJ-CFn" secondAttribute="trailing" id="BUE-oi-akP"/>
+                            <constraint firstItem="cC5-g9-IcQ" firstAttribute="top" secondItem="REP-Rz-IEE" secondAttribute="bottom" constant="20" id="Cst-Gz-wBI"/>
+                            <constraint firstItem="KFb-PJ-CFn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GFF-bA-8eR"/>
+                            <constraint firstItem="cC5-g9-IcQ" firstAttribute="top" secondItem="M9c-XI-40L" secondAttribute="bottom" constant="16" id="JMJ-tB-esY"/>
+                            <constraint firstItem="5H2-dU-1Jd" firstAttribute="top" secondItem="BWa-3x-bSU" secondAttribute="bottom" constant="8" id="L1J-F6-G9r"/>
+                            <constraint firstItem="cC5-g9-IcQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="L3F-kk-0oM"/>
+                            <constraint firstItem="XhW-FR-sH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="MzC-Bt-f1c"/>
+                            <constraint firstAttribute="trailing" secondItem="M9c-XI-40L" secondAttribute="trailing" constant="20" id="O0m-0i-hrh"/>
+                            <constraint firstItem="BWa-3x-bSU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oqk-kM-e7M"/>
+                            <constraint firstAttribute="trailing" secondItem="BWa-3x-bSU" secondAttribute="trailing" id="RCB-FD-4jP"/>
+                            <constraint firstAttribute="trailing" secondItem="REP-Rz-IEE" secondAttribute="trailing" id="Ra0-3f-9NB"/>
+                            <constraint firstItem="REP-Rz-IEE" firstAttribute="top" secondItem="5H2-dU-1Jd" secondAttribute="bottom" constant="8" id="Sb0-28-jC6"/>
+                            <constraint firstAttribute="trailing" secondItem="cC5-g9-IcQ" secondAttribute="trailing" constant="20" id="X84-c7-K8H"/>
+                            <constraint firstItem="M9c-XI-40L" firstAttribute="top" secondItem="BWa-3x-bSU" secondAttribute="bottom" constant="20" id="Yjx-FO-q0b"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KFb-PJ-CFn" secondAttribute="bottom" id="ZVq-Ev-mQb"/>
+                            <constraint firstItem="REP-Rz-IEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="162" id="amV-jF-Q38"/>
+                            <constraint firstItem="5H2-dU-1Jd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="c8F-X5-WPY"/>
+                            <constraint firstAttribute="trailing" secondItem="REP-Rz-IEE" secondAttribute="trailing" id="dBJ-Rj-KRV"/>
+                            <constraint firstItem="5H2-dU-1Jd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lEc-qP-7pp"/>
+                            <constraint firstItem="M9c-XI-40L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lVC-u9-QJu"/>
+                            <constraint firstAttribute="trailing" secondItem="5H2-dU-1Jd" secondAttribute="trailing" constant="20" id="odP-OT-Oba"/>
+                            <constraint firstAttribute="trailing" secondItem="cC5-g9-IcQ" secondAttribute="trailing" constant="20" id="q5l-yC-8t6"/>
+                            <constraint firstItem="XhW-FR-sH5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="u40-PO-5Kc"/>
+                            <constraint firstItem="BWa-3x-bSU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="150" id="u8K-q5-FLM">
+                                <variation key="heightClass=compact" constant="-162"/>
+                            </constraint>
+                            <constraint firstItem="M9c-XI-40L" firstAttribute="top" secondItem="REP-Rz-IEE" secondAttribute="bottom" constant="16" id="uyC-OS-qPP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="u8K-q5-FLM"/>
+                                <exclude reference="Yjx-FO-q0b"/>
+                                <exclude reference="Ra0-3f-9NB"/>
+                                <exclude reference="amV-jF-Q38"/>
+                                <exclude reference="c8F-X5-WPY"/>
+                                <exclude reference="odP-OT-Oba"/>
+                                <exclude reference="Cst-Gz-wBI"/>
+                                <exclude reference="X84-c7-K8H"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="RCB-FD-4jP"/>
+                                <include reference="u8K-q5-FLM"/>
+                                <exclude reference="O0m-0i-hrh"/>
+                                <include reference="Yjx-FO-q0b"/>
+                                <exclude reference="uyC-OS-qPP"/>
+                                <exclude reference="0Lu-4W-A44"/>
+                                <include reference="Ra0-3f-9NB"/>
+                                <include reference="amV-jF-Q38"/>
+                                <exclude reference="dBJ-Rj-KRV"/>
+                                <exclude reference="L1J-F6-G9r"/>
+                                <include reference="c8F-X5-WPY"/>
+                                <exclude reference="lEc-qP-7pp"/>
+                                <include reference="odP-OT-Oba"/>
+                                <include reference="Cst-Gz-wBI"/>
+                                <exclude reference="JMJ-tB-esY"/>
+                                <exclude reference="L3F-kk-0oM"/>
+                                <include reference="X84-c7-K8H"/>
+                                <exclude reference="q5l-yC-8t6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="filterLabel" destination="5H2-dU-1Jd" id="BJu-xU-HMy"/>
+                        <outlet property="filtered" destination="REP-Rz-IEE" id="0s2-4z-4aQ"/>
+                        <outlet property="pause" destination="Fal-fS-d7M" id="iIj-gP-8IX"/>
+                        <outlet property="unfiltered" destination="BWa-3x-bSU" id="3cp-WT-JnN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="280.5"/>
+        </scene>
+    </scenes>
+</document>
